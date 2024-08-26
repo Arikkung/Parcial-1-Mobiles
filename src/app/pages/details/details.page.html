@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Get back lol" icon="home" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToCart()">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h6 style="margin-left: 20px;">Void Details ✨</h6>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="product"> <!-- El hermoso if para que no dé error. XD -->
+    <ion-card-header>
+      <ion-card-title id="titulo2">{{ product.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="product.image" style="width: 100%; height: auto;" />
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card-subtitle>{{ product.category }}</ion-card-subtitle>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card-title>{{ product.price | currency: currentCurrency }}</ion-card-title>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
+            <h4>Description</h4>
+            <p>{{ product.description }}</p>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Rating: {{ product.rating.rate }} ☆ ({{ product.rating.count }} reviews)</ion-card-subtitle>
+            <!-- <ion-card-subtitle> Creado el: {{ product.createdAt }} Actualizado el: {{ product.updatedAt }} >:c </ion-card-subtitle>   -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button id="add" expand="block" (click)="addToCart()">Add to cart</ion-button>
+      </ion-toolbar>
+    </ion-footer>
+      <ion-toast position="top" trigger="add" [duration]="1000" message="Successfully added!" class="custom-toast" icon="checkmark">
+      ></ion-toast>
+  </ion-card>
+</ion-content>

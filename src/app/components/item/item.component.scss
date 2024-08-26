@@ -1,0 +1,42 @@
+ion-item {
+    border-radius: 10px; 
+    overflow: hidden; 
+    border-radius: 12px; 
+    border: 5px solid black;
+}
+
+ion-thumbnail {
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+
+.trash-button {
+    border-radius: 50%;
+    --ion-icon-font-size: 18px;
+    --padding-start: 0; /* Reducir el padding interno del botón */
+    --padding-end: 0; /* Reducir el padding interno del botón */
+    height: 34px; 
+    width: 34px;
+}
+
+.custom-toast {
+    --background: #28a745; /* Color de fondo verde */
+    --color: white; /* Color de texto blanco para contraste */
+    --border-radius: 12px; /* Bordes redondeados */
+    --padding-start: 16px; /* Espaciado interno */
+    --padding-end: 16px; /* Espaciado interno */
+    --min-width: 250px; /* Ancho mínimo */
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra para un efecto moderno */
+  
+    /* Estilo del icono dentro del toast */
+    ion-icon {
+      --color: white; /* Color del icono blanco para contraste */
+      margin-right: 8px; /* Margen derecho para separar el icono del texto */
+    }
+  
+    /* Estilos adicionales para texto */
+    .toast-message {
+      font-weight: bold; /* Texto en negrita */
+      font-size: 16px; /* Tamaño de fuente */
+    }
+  }

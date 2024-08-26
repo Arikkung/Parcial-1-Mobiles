@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header no-border [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <h6 style="margin-left: 20px;">My Virtual Useless Stuff Shop 👀</h6>
+      <ion-buttons slot="end">
+        <ion-button (click)="goToCart()">
+          <ion-icon slot="icon-only" name="cart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<app-selectc (categorySelected)="onCategorySelected($event)"></app-selectc>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of products">
+        <app-card (doClick)="doNavigate($event)" [id]="item.id" [image]="item.image" [title]="item.title" 
+          [category]="item.category"
+          [rating]="item.rating"
+          [description]="item.description"
+          [price]="item.price">
+        </app-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

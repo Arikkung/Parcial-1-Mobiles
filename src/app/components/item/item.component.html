@@ -1,0 +1,14 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img [src]="item.image">
+  </ion-thumbnail>
+  <ion-label>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.price | currency }}</p>
+  </ion-label>
+  <ion-button id= "sas" slot="end" fill="clear" color="danger" class="trash-button" (click)="removeFromCart(item.id)">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-button>
+  <ion-toast trigger="sas" position="top" [duration]="1000" message="Succesfully Removed" class="custom-toast" icon="checkmark">
+  ></ion-toast>
+</ion-item>

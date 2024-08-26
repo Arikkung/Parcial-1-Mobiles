@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Get back lol" icon="home" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <h6 style="margin-left: 20px;">My cart 🛒</h6>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <app-item *ngFor="let item of cartItems" [item]="item"></app-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button id="ses" expand="block" (click)="clearCart()">Purchase</ion-button>
+      <ion-label slot="end" class="total-label">Total: {{ totalAmount | currency: currentCurrency }}</ion-label>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,7 @@
+<ion-item>
+  <ion-select aria-label="categories" placeholder="Select category" [multiple]="false" (ionChange)="onCategoryChange($event)">
+    <ion-select-option value="all">All</ion-select-option>
+    <!-- Recorrido del array para mostrar las categorias en el select. -->
+    <ion-select-option *ngFor="let category of categories" [value]="category">{{ category }}</ion-select-option>
+  </ion-select>
+</ion-item>
